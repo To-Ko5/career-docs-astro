@@ -16,6 +16,12 @@ export type work = {
   }
 }
 
+export type about = {
+  name: string
+  position: string
+  content: string
+}
+
 export type url_link = {
   icon: LucideIcon
   href: string
