@@ -21,4 +21,4 @@ pnpm-debug.log*
 .DS_Store
 
 # data
-/src/data/data.ts
+/data/data.ts
