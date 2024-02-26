@@ -29,7 +29,7 @@ export const about = {
 export const works = [
   {
     case: 1,
-    project: 'case1',
+    title: 'case1',
     date: {
       start: 2023,
       end: 2024
@@ -44,7 +44,7 @@ export const works = [
   },
   {
     case: 2,
-    project: 'case2',
+    title: 'case2',
     date: {
       start: 2023,
       end: 2024
@@ -59,7 +59,7 @@ export const works = [
   },
   {
     case: 3,
-    project: 'case3',
+    title: 'case3',
     date: {
       start: 2023,
       end: 2024
