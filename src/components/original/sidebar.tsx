@@ -7,10 +7,14 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
-import { works } from 'data/data'
 import { MenuIcon, MoreHorizontalIcon } from 'lucide-react'
+import type { work } from 'types/data'
 
-const Sidebar = () => {
+type Props = {
+  works: work[]
+}
+
+const Sidebar = ({ works }: Props) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -20,17 +24,17 @@ const Sidebar = () => {
         </Button>
       </SheetTrigger>
       <SheetContent side={'left'}>
-        {works.map((work) => {
+        {works.map((work: any) => {
           return (
             <SheetHeader className="mb-4" key={work.case}>
               <SheetTitle className="text-md">
                 <a className="hover:underline" href={`/case/${work.case}`}>
-                  {work.project}
+                  {work.title}
                 </a>
               </SheetTitle>
               <div className="flex gap-x-2">
                 <SheetDescription className="line-clamp-2 mb-2">
-                  {work.description.text}
+                  {work.description}
                 </SheetDescription>
                 <div className="text-right">
                   <Button variant="outline" size="icon" asChild>
