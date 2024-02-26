@@ -1,4 +1,4 @@
-import { newtClient } from '@/lib/newt/newt-client'
+import { newtClient } from '@/lib/newt-client'
 import type { about as about_type } from 'types/data'
 
 export const getAbout = async () => {
