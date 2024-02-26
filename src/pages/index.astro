@@ -2,12 +2,15 @@
 import Date from '@/components/original/date'
 import About from '@/components/original/about'
 import Profile from '@/components/original/profile'
+import Works from '@/components/original/works'
 import Layout from '@/layouts/Layout.astro'
-import { getAbout } from '@/lib/newt/get-about'
+import { getAbout } from '@/lib/newt/about'
+import { getWorks } from '@/lib/newt/work'
 import { Image } from 'astro:assets'
 import photo from 'public/photo.jpg'
 
 const about = await getAbout()
+const works = await getWorks()
 ---
 
 <Layout title="Welcome to Astro.">
@@ -24,7 +27,7 @@ const about = await getAbout()
       <About content={about[0].content} />
     </div>
     <div>
-      <!-- <Works /> -->
+      <Works works={works} />
     </div>
   </main>
 </Layout>
