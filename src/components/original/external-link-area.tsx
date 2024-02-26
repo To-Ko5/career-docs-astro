@@ -31,6 +31,7 @@ const ExternalLinkArea = ({ urlLinks }: Props) => {
                         href={`${link.href}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={link.tooltip}
                       >
                         <link.icon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
                       </a>
@@ -56,6 +57,7 @@ const ExternalLinkArea = ({ urlLinks }: Props) => {
                   href={`${link.href}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.tooltip}
                 >
                   <link.icon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
                 </a>
