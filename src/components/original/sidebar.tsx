@@ -1,3 +1,4 @@
+import WorkDescription from '@/components/original/work-description'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -34,7 +35,7 @@ const Sidebar = ({ works }: Props) => {
               </SheetTitle>
               <div className="flex gap-x-2">
                 <SheetDescription className="line-clamp-2 mb-2">
-                  {work.description}
+                  <WorkDescription content={work.description || ''} />
                 </SheetDescription>
                 <div className="text-right">
                   <Button variant="outline" size="icon" asChild>

@@ -1,8 +1,9 @@
+import WorkDescription from '@/components/original/work-description'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import type { work } from 'types/data'
 import { format } from 'date-fns'
 import { useCallback } from 'react'
+import type { work } from 'types/data'
 
 type Props = {
   work: work
@@ -79,15 +80,7 @@ const Work = ({ work, isLink = true }: Props) => {
         </CardContent>
 
         <CardContent className="text-sm text-muted-foreground whitespace-pre-line">
-          {/* <div className="mb-3">{work.description.text}</div>
-          {work.description.list && (
-            <ul className="list-disc pl-4">
-              {work.description.list.map((listText, index) => {
-                return <li key={index}>{listText}</li>
-              })}
-            </ul>
-          )} */}
-          {work.description}
+          <WorkDescription content={work.description || ''} />
         </CardContent>
       </Card>
     </section>
