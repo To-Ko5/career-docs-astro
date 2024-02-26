@@ -2,18 +2,13 @@ import { LucideIcon } from 'lucide-react'
 
 export type work = {
   case: number
-  project: string
-  date: {
-    start: string
-    end: string
-  }
+  title: string
+  startDate: string
+  endDate: string
   positions: string[]
   skills: string[]
   tools: string[]
-  description: {
-    text: string
-    list: string[] | null
-  }
+  description: string
 }
 
 export type about = {
