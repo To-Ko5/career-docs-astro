@@ -1,5 +1,5 @@
 import ThemeButton from '@/components/original/theme-button'
-import { site } from '@/data/data'
+import { site } from 'data/data'
 import Sidebar from '@/components/original/sidebar'
 
 const Header = () => {

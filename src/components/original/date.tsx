@@ -1,6 +1,5 @@
-import React from 'react'
+import { date } from 'data/data'
 import { format } from 'date-fns'
-import { date } from '@/data/data'
 const Date = () => {
   return (
     <p className="text-right text-sm text-muted-foreground mb-4">

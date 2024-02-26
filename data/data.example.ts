@@ -1,4 +1,4 @@
-import type { url_link } from '@/types/data'
+import type { url_link } from 'types/data'
 import { Github, Link, BookText } from 'lucide-react'
 
 export const site = {

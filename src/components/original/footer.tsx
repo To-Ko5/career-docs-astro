@@ -1,4 +1,4 @@
-import { site } from '@/data/data'
+import { site } from 'data/data'
 
 const Footer = () => {
   return (

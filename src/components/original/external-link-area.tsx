@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import type { url_link } from '@/types/data'
+import type { url_link } from 'types/data'
 
 type Props = {
   urlLinks: url_link[]

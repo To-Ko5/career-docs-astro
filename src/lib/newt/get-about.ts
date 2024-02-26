@@ -1,5 +1,5 @@
 import { newtClient } from '@/lib/newt/newt-client'
-import type { about as about_type } from '@/types/data'
+import type { about as about_type } from 'types/data'
 
 export const getAbout = async () => {
   const { items: about } = await newtClient.getContents<about_type>({

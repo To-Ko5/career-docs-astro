@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
-import { works } from '@/data/data'
+import { works } from 'data/data'
 import { MenuIcon, MoreHorizontalIcon } from 'lucide-react'
 
 const Sidebar = () => {
