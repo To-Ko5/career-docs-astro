@@ -1,6 +1,10 @@
 ---
 import Date from '@/components/original/date'
+import About from '@/components/original/about'
+import Profile from '@/components/original/profile'
 import Layout from '@/layouts/Layout.astro'
+import { getAbout } from '@/lib/newt/get-about'
+const about = await getAbout()
 ---
 
 <Layout title="Welcome to Astro.">
@@ -8,14 +12,14 @@ import Layout from '@/layouts/Layout.astro'
     <div>
       <Date />
     </div>
-    <!-- <div>
-      <Profile />
+    <div>
+      <Profile name={about[0].name} position={about[0].position} />
     </div>
     <div>
-      <About />
+      <About content={about[0].content} />
     </div>
     <div>
-      <Works />
-    </div> -->
+      <!-- <Works /> -->
+    </div>
   </main>
 </Layout>
