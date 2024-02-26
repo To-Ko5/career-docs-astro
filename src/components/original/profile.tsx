@@ -1,21 +1,18 @@
 import ExternalLinkArea from '@/components/original/external-link-area'
 import { urlLinks } from '@/data/data'
+import type { ReactNode } from 'react'
 
 type Props = {
   name: string
   position: string
+  children?: ReactNode
 }
 
-const Profile = ({ name, position }: Props) => {
+const Profile = ({ name, position, children }: Props) => {
   return (
     <section>
       <div className="flex flex-col sm:flex-row gap-4">
-        <div className="max-w-[100px]">
-          <picture>
-            <source srcSet="https://placehold.jp/500x500.png" />
-            <img src="https://placehold.jp/500x500.png" alt="profile" />
-          </picture>
-        </div>
+        <div className="max-w-[100px]">{children}</div>
         <div>
           <div className="mb-2">
             <h1 className="text-2xl mb-2 font-bold">{name}</h1>

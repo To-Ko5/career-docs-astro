@@ -4,6 +4,9 @@ import About from '@/components/original/about'
 import Profile from '@/components/original/profile'
 import Layout from '@/layouts/Layout.astro'
 import { getAbout } from '@/lib/newt/get-about'
+import { Image } from 'astro:assets'
+import photo from 'public/photo.jpg'
+
 const about = await getAbout()
 ---
 
@@ -13,7 +16,9 @@ const about = await getAbout()
       <Date />
     </div>
     <div>
-      <Profile name={about[0].name} position={about[0].position} />
+      <Profile name={about[0].name} position={about[0].position}>
+        <Image src={photo} alt={about[0].name} loading="eager" />
+      </Profile>
     </div>
     <div>
       <About content={about[0].content} />
