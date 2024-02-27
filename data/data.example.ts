@@ -1,5 +1,5 @@
 import type { url_link } from 'types/data'
-import { Github, Link, BookText } from 'lucide-react'
+import { Link, BookText } from 'lucide-react'
 
 export const site = {
   title: 'site description',
@@ -11,7 +11,7 @@ export const date = {
 }
 
 export const urlLinks: url_link[] = [
-  { icon: Github, href: 'http://localhost:3000/url', tooltip: 'Github' },
+  { icon: Link, href: 'http://localhost:3000/url', tooltip: 'Docs' },
   { icon: Link, href: 'http://localhost:3000/url', tooltip: 'SNS' },
   { icon: BookText, href: 'http://localhost:3000/url', tooltip: 'Blog' }
 ]
