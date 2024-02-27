@@ -1,4 +1,4 @@
-import { site } from 'data/data'
+import { site } from 'data/site_data'
 
 const Footer = () => {
   return (

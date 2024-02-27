@@ -1,5 +1,5 @@
 import ExternalLinkArea from '@/components/original/external-link-area'
-import { urlLinks } from 'data/data'
+import { urlLinks } from 'data/site_data'
 import type { ReactNode } from 'react'
 
 type Props = {

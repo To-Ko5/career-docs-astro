@@ -1,7 +1,7 @@
 import PrintButton from '@/components/original/print-button'
 import Sidebar from '@/components/original/sidebar'
 import ThemeButton from '@/components/original/theme-button'
-import { site } from 'data/data'
+import { site } from 'data/site_data'
 import type { work } from 'types/data'
 
 type Props = {

@@ -1,4 +1,4 @@
-import { date } from 'data/data'
+import { date } from 'data/site_data'
 import { format } from 'date-fns'
 const Date = () => {
   return (
