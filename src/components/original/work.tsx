@@ -29,15 +29,13 @@ const Work = ({ work, isLink = true }: Props) => {
 
   return (
     <section>
-      <Card>
+      <Card className="print:shadow-none">
         <CardHeader>
           <div className="text-sm text-right tabular-nums text-muted-foreground sm:hidden mb-3">
             {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
           </div>
           <div className="flex items-center justify-between gap-x-2">
-            <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none mb-2">
-              {setTitle()}
-            </h3>
+            <h3 className="font-semibold leading-none">{setTitle()}</h3>
             <div className="text-sm tabular-nums text-muted-foreground hidden sm:block">
               {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
             </div>
