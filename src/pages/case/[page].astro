@@ -1,0 +1,44 @@
+---
+import Date from '@/components/original/date'
+import Work from '@/components/original/work'
+import WorkPagination from '@/components/original/work-pagination'
+import { buttonVariants } from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import { newtClient } from '@/lib/newt-client'
+import type { GetStaticPathsOptions } from 'astro'
+import { site } from 'data/data'
+import type { work } from 'types/data'
+
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+  const { items: works } = await newtClient.getContents<work>({
+    appUid: 'document-site',
+    modelUid: 'work',
+    query: {}
+  })
+  return paginate(works, { pageSize: 1 })
+}
+
+const { page } = Astro.props
+const work = page.data[0] as work
+---
+
+<Layout title={`${work.title} | ${site.title}`}>
+  <main class="container max-w-4xl pb-16 space-y-10">
+    <div>
+      <Date />
+    </div>
+    <div>
+      <Work work={work} />
+    </div>
+    <div>
+      <WorkPagination
+        total={page.total}
+        currentPage={page.currentPage}
+        url={page.url}
+      />
+    </div>
+    <div>
+      <a href="/" class={buttonVariants({ variant: 'outline' })}> Topへ</a>
+    </div>
+  </main>
+</Layout>
