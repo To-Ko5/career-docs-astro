@@ -19,7 +19,7 @@ const works = await getWorks()
       <Date />
     </div>
     <div>
-      <Profile name={about[0].name} position={about[0].position}>
+      <Profile name={about[0].name} position={about[0].position} client:load>
         <Image src={photo} alt={about[0].name} loading="eager" />
       </Profile>
     </div>
