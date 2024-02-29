@@ -5,6 +5,9 @@ type Props = {
   works: work[]
 }
 
+// style at printing
+const printStyle = 'print:[&:nth-of-type(2)]:break-inside-avoid'
+
 const Works = ({ works }: Props) => {
   return (
     <section>
@@ -12,7 +15,11 @@ const Works = ({ works }: Props) => {
 
       <div className="space-y-8">
         {works.map((work) => {
-          return <Work key={work.case} work={work} />
+          return (
+            <div key={work.case} className={`${printStyle}`}>
+              <Work work={work} />
+            </div>
+          )
         })}
       </div>
     </section>
