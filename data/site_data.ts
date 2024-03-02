@@ -1,4 +1,5 @@
-import { Github, BookText } from 'lucide-react'
+import { BookText } from 'lucide-react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
 import type { url_link } from 'types/data'
 
 export const site = {
@@ -13,7 +14,7 @@ export const date = {
 export const urlLinks: url_link[] = [
   {
     // Deprecated but temporarily used
-    icon: Github,
+    icon: SiGithub,
     href: import.meta.env.LINK_URL_1 || '#',
     tooltip: 'Github'
   },
