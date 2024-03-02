@@ -14,15 +14,13 @@ permissions:
   pages: write
   id-token: write
 
-# Secrets set
-env:
-  NEWT_SPACE_UID: ${{ secrets.NEWT_SPACE_UID }}
-  NEWT_CDN_API_TOKEN: ${{ secrets.NEWT_CDN_API_TOKEN }}
-  LINK_URL_1: ${{ secrets.LINK_URL_1 }}
-  LINK_URL_2: ${{ secrets.LINK_URL_2 }}
-
 jobs:
   build:
+    env: # Secrets set
+      NEWT_SPACE_UID: ${{ secrets.NEWT_SPACE_UID }}
+      NEWT_CDN_API_TOKEN: ${{ secrets.NEWT_CDN_API_TOKEN }}
+      LINK_URL_1: ${{ secrets.LINK_URL_1 }}
+      LINK_URL_2: ${{ secrets.LINK_URL_2 }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
