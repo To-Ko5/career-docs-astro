@@ -8,7 +8,7 @@ import { getAbout } from '@/lib/newt/about'
 import { getWorks } from '@/lib/newt/work'
 import { Image } from 'astro:assets'
 import { site } from 'data/site_data'
-import photo from 'public/photo.jpg'
+import Icon from 'public/icon.jpg'
 
 const about = await getAbout()
 const works = await getWorks()
@@ -21,7 +21,7 @@ const works = await getWorks()
     </div>
     <div>
       <Profile name={about[0].name} position={about[0].position} client:load>
-        <Image src={photo} alt={about[0].name} loading="eager" />
+        <Image src={Icon} alt={about[0].name} loading="eager" />
       </Profile>
     </div>
     <div>
