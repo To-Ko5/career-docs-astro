@@ -1,19 +1,20 @@
 ---
-import Date from '@/components/original/date'
 import About from '@/components/original/about'
+import Date from '@/components/original/date'
 import Profile from '@/components/original/profile'
 import Works from '@/components/original/works'
 import Layout from '@/layouts/Layout.astro'
 import { getAbout } from '@/lib/newt/about'
 import { getWorks } from '@/lib/newt/work'
 import { Image } from 'astro:assets'
+import { site } from 'data/site_data'
 import photo from 'public/photo.jpg'
 
 const about = await getAbout()
 const works = await getWorks()
 ---
 
-<Layout>
+<Layout title={`${about[0].name} | ${site.title}`}>
   <main class="container max-w-4xl pb-16 space-y-10">
     <div>
       <Date />
