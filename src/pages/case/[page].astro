@@ -6,7 +6,7 @@ import { buttonVariants } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
 import { newtClient } from '@/lib/newt-client'
 import type { GetStaticPathsOptions } from 'astro'
-import { site } from 'data/site_data'
+import { baseUrl, site } from 'data/site_data'
 import type { work } from 'types/data'
 
 export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
@@ -38,7 +38,9 @@ const work = page.data[0] as work
       />
     </div>
     <div>
-      <a href="/" class={buttonVariants({ variant: 'outline' })}> Topへ</a>
+      <a href={baseUrl} class={buttonVariants({ variant: 'outline' })}>
+        Topへ</a
+      >
     </div>
   </main>
 </Layout>

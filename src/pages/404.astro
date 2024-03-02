@@ -1,13 +1,16 @@
 ---
 import { buttonVariants } from '@/components/ui/button'
 import NotFoundLayout from '@/layouts/NotFoundLayout.astro'
+import { baseUrl } from 'data/site_data'
 ---
 
 <NotFoundLayout title="Not Found">
   <div class="absolute inset-0 flex flex-col gap-4 items-center justify-center">
     <div class="text-xl">ページが見つかりませんでした</div>
     <div>
-      <a href="/" class={buttonVariants({ variant: 'outline' })}> Topへ</a>
+      <a href={baseUrl} class={buttonVariants({ variant: 'outline' })}>
+        Topへ</a
+      >
     </div>
   </div>
 </NotFoundLayout>

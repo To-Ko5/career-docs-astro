@@ -8,6 +8,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
+import { baseUrl } from 'data/site_data'
 import { MenuIcon, MoreHorizontalIcon } from 'lucide-react'
 import type { work } from 'types/data'
 
@@ -29,7 +30,10 @@ const Sidebar = ({ works }: Props) => {
           return (
             <SheetHeader className="mb-4" key={work.case}>
               <SheetTitle className="text-md">
-                <a className="hover:underline" href={`/case/${work.case}`}>
+                <a
+                  className="hover:underline"
+                  href={`${baseUrl}/case/${work.case}`}
+                >
                   {work.title}
                 </a>
               </SheetTitle>
@@ -39,7 +43,7 @@ const Sidebar = ({ works }: Props) => {
                 </SheetDescription>
                 <div className="text-right">
                   <Button variant="outline" size="icon" asChild>
-                    <a href={`/case/${work.case}`}>
+                    <a href={`${baseUrl}/case/${work.case}`}>
                       <MoreHorizontalIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
                     </a>
                   </Button>
