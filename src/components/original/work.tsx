@@ -1,7 +1,6 @@
 import WorkDescription from '@/components/original/work-description'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { baseUrl } from 'data/site_data'
 import { format } from 'date-fns'
 import { useCallback } from 'react'
 import type { work } from 'types/data'
@@ -19,10 +18,7 @@ const Work = ({ work, isLink = true }: Props) => {
   const setTitle = useCallback(() => {
     if (isLink) {
       return (
-        <a
-          className="hover:underline text-xl"
-          href={`${baseUrl}/case/${work.case}`}
-        >
+        <a className="hover:underline text-xl" href={`/case/${work.case}`}>
           {work.title}
         </a>
       )

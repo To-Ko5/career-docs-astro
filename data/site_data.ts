@@ -2,8 +2,6 @@ import { BookText } from 'lucide-react'
 import { SiGithub } from '@icons-pack/react-simple-icons'
 import type { url_link } from 'types/data'
 
-export const baseUrl = '/docs'
-
 export const site = {
   title: 'Skill Sheet',
   description: 'Engineer Skill Sheet'

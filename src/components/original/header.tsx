@@ -1,7 +1,7 @@
 import PrintButton from '@/components/original/print-button'
 import Sidebar from '@/components/original/sidebar'
 import ThemeButton from '@/components/original/theme-button'
-import { baseUrl, site } from 'data/site_data'
+import { site } from 'data/site_data'
 import type { work } from 'types/data'
 
 type Props = {
@@ -18,7 +18,7 @@ const Header = ({ works }: Props) => {
           </div>
           <div className="flex-1">
             <div>
-              <a href={baseUrl}>{site.title}</a>
+              <a href="/">{site.title}</a>
             </div>
           </div>
         </div>

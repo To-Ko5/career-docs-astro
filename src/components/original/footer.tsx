@@ -1,10 +1,10 @@
-import { baseUrl, site } from 'data/site_data'
+import { site } from 'data/site_data'
 
 const Footer = () => {
   return (
     <footer className="p-3 border-t print:hidden">
       <p className="text-center text-sm text-muted-foreground">
-        <a href={baseUrl}>{site.title}</a>
+        <a href="/">{site.title}</a>
       </p>
     </footer>
   )
