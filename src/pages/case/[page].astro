@@ -18,11 +18,19 @@ export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
 
   return works.map((work) => ({
     params: { page: work.case },
-    props: { work }
+    props: { work, pages: paginate(works, { pageSize: 1 }) }
   }))
 }
 
-const { work } = Astro.props
+const { work, pages } = Astro.props
+
+const page = pages
+  .map((e) => {
+    if (work.case === Number(e.params.page)) {
+      return e.props.page
+    }
+  })
+  .filter(Boolean)[0]
 ---
 
 <Layout title={`${work.title} | ${site.title}`}>
@@ -33,13 +41,17 @@ const { work } = Astro.props
     <div>
       <Work work={work} isLink={false} />
     </div>
-    <div>
-      <!-- <WorkPagination
-        total={page.total}
-        currentPage={page.currentPage}
-        url={page.url}
-      /> -->
-    </div>
+    {
+      page && (
+        <div>
+          <WorkPagination
+            total={page.total}
+            currentPage={page.currentPage}
+            url={page.url}
+          />
+        </div>
+      )
+    }
     <div>
       <a href="/" class={buttonVariants({ variant: 'outline' })}> Topへ</a>
     </div>
