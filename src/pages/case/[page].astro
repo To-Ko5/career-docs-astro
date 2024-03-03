@@ -15,11 +15,14 @@ export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
     modelUid: 'work',
     query: {}
   })
-  return paginate(works, { pageSize: 1 })
+
+  return works.map((work) => ({
+    params: { page: work.case },
+    props: { work }
+  }))
 }
 
-const { page } = Astro.props
-const work = page.data[0] as work
+const { work } = Astro.props
 ---
 
 <Layout title={`${work.title} | ${site.title}`}>
@@ -31,11 +34,11 @@ const work = page.data[0] as work
       <Work work={work} isLink={false} />
     </div>
     <div>
-      <WorkPagination
+      <!-- <WorkPagination
         total={page.total}
         currentPage={page.currentPage}
         url={page.url}
-      />
+      /> -->
     </div>
     <div>
       <a href="/" class={buttonVariants({ variant: 'outline' })}> Topへ</a>
