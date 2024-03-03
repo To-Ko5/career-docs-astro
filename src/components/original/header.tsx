@@ -13,18 +13,18 @@ const Header = ({ works }: Props) => {
     <header className="mt-5 mb-4 print:hidden">
       <div className="container max-w-4xl flex justify-between">
         <div className="flex items-center">
-          <div className="mr-4">
+          {/* <div className="mr-4">
             <Sidebar works={works} />
-          </div>
+          </div> */}
           <div className="flex-1">
-            <div>
+            <div className="font-bold">
               <a href="/">{site.title}</a>
             </div>
           </div>
         </div>
 
         <div className="flex items-center">
-          <div className="mr-4">
+          <div className="hidden md:block mr-4">
             <PrintButton />
           </div>
           <ThemeButton />

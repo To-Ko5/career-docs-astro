@@ -24,7 +24,7 @@ const Sidebar = ({ works }: Props) => {
           <span className="sr-only">Toggle Sidebar</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side={'left'}>
+      <SheetContent side={'left'} className="overflow-auto">
         {works.map((work: any) => {
           return (
             <SheetHeader className="mb-4 text-left" key={work.case}>
