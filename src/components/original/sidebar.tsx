@@ -27,7 +27,7 @@ const Sidebar = ({ works }: Props) => {
       <SheetContent side={'left'}>
         {works.map((work: any) => {
           return (
-            <SheetHeader className="mb-4" key={work.case}>
+            <SheetHeader className="mb-4 text-left" key={work.case}>
               <SheetTitle className="text-md">
                 <a className="hover:underline" href={`/case/${work.case}`}>
                   {work.title}
