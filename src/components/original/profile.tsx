@@ -12,7 +12,7 @@ const Profile = ({ name, position, children }: Props) => {
   return (
     <section>
       <div className="flex flex-col sm:flex-row gap-4">
-        <div className="max-w-[100px]">{children}</div>
+        <div className="max-w-[112px]">{children}</div>
         <div>
           <div className="mb-2">
             <h1 className="text-2xl mb-2 font-bold">{name}</h1>
