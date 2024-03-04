@@ -13,7 +13,6 @@ export const date = {
 
 export const urlLinks: url_link[] = [
   {
-    // Deprecated but temporarily used
     icon: SiGithub,
     href: import.meta.env.LINK_URL_1 || '#',
     tooltip: 'Github'

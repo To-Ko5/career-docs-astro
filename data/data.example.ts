@@ -1,5 +1,6 @@
+import { SiGithub } from '@icons-pack/react-simple-icons'
+import { BookText, Link } from 'lucide-react'
 import type { url_link } from 'types/data'
-import { Link, BookText } from 'lucide-react'
 
 export const site = {
   title: 'site description',
@@ -11,7 +12,7 @@ export const date = {
 }
 
 export const urlLinks: url_link[] = [
-  { icon: Link, href: 'http://localhost:3000/url', tooltip: 'Docs' },
+  { icon: SiGithub, href: 'http://localhost:3000/url', tooltip: 'Github' },
   { icon: Link, href: 'http://localhost:3000/url', tooltip: 'SNS' },
   { icon: BookText, href: 'http://localhost:3000/url', tooltip: 'Blog' }
 ]
