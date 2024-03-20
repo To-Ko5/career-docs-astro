@@ -1,7 +1,7 @@
 import WorkDescription from '@/components/original/work-description'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { format } from 'date-fns'
+import { differenceInMonths, format } from 'date-fns'
 import { useCallback } from 'react'
 import type { work } from 'types/data'
 
@@ -27,17 +27,37 @@ const Work = ({ work, isLink = true }: Props) => {
     }
   }, [work, isLink])
 
+  const setPeriod = useCallback((startDate: string, endDate: string) => {
+    const monthsDifference = differenceInMonths(endDate, startDate)
+    const years = Math.floor(monthsDifference / 12) // 年数
+    const months = monthsDifference % 12
+    let result = ''
+    if (years > 0) {
+      result += `${years}年`
+    }
+    if (months > 0) {
+      result += `${months}ヶ月`
+    }
+    return `（${result}）`
+  }, [])
+
   return (
     <section>
       <Card className="print:shadow-none">
         <CardHeader>
           <div className="text-sm text-right tabular-nums text-muted-foreground sm:hidden mb-3">
-            {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
+            <span>
+              {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
+            </span>
+            <span>{setPeriod(work.startDate, work.endDate)}</span>
           </div>
           <div className="flex items-center justify-between gap-x-2">
             <h3 className="font-semibold leading-none">{setTitle()}</h3>
             <div className="text-sm tabular-nums text-muted-foreground hidden sm:block">
-              {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
+              <span>
+                {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
+              </span>
+              <span>{setPeriod(work.startDate, work.endDate)}</span>
             </div>
           </div>
           <div className="flex gap-2 flex-wrap">
