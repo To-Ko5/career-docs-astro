@@ -19,7 +19,7 @@ const Work = ({ work, isLink = true }: Props) => {
     if (isLink) {
       return (
         <a className="hover:underline text-xl" href={`/case/${work.case}`}>
-          {work.title}
+          {work.case}. {work.title}
         </a>
       )
     } else {
@@ -44,7 +44,7 @@ const Work = ({ work, isLink = true }: Props) => {
   return (
     <section>
       <Card className="print:shadow-none">
-        <CardHeader>
+        <CardHeader className="space-y-3">
           <div className="text-sm text-right tabular-nums text-muted-foreground sm:hidden mb-3">
             <span>
               {dateFormat(work.startDate)} - {dateFormat(work.endDate)}
