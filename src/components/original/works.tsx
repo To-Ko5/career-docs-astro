@@ -6,7 +6,8 @@ type Props = {
 }
 
 // style at printing
-const printStyle = 'print:[&:nth-of-type(2)]:break-inside-avoid'
+const printStyle =
+  'print:[&:nth-of-type(2)]:break-inside-avoid print:[&:nth-of-type(3)]:break-inside-avoid'
 
 const Works = ({ works }: Props) => {
   return (
