@@ -1,17 +1,22 @@
 ---
+import { site } from 'data/site_data'
 import '@/styles/globals.css'
 interface Props {
   title: string
 }
 
 const { title } = Astro.props
+const meta = {
+  title: title || site.title,
+  description: site.description
+}
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={meta.description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <title>{title}</title>
